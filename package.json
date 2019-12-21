@@ -1,0 +1,21 @@
+{
+    "name": "discord-soup-bot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/eai04191/discord-soup-bot",
+    "author": "Aoi Irie <eai@mizle.net>",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2",
+        "ts-node": "^8.5.4",
+        "typescript": "^3.7.4"
+    },
+    "dependencies": {
+        "@types/node": "^12.12.21",
+        "discord.js": "^11.5.1",
+        "dotenv": "^8.2.0"
+    }
+}
