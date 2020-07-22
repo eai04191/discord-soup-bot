@@ -6,12 +6,30 @@ const client = new Client();
 const soupReactions = process.env.SOUP_REACTIONS.split(",");
 
 client.on("ready", () => {
-    console.log("I am ready!");
-    client.user.setActivity("github.com/eai04191/discord-soup-bot");
+    console.log("Soup Chef 準備完了");
+    if (process.env.SET_ACTIVITY === "true") {
+        const activity = process.env.ACTIVITY_TEXT;
+        if (!activity) {
+            console.error(
+                "SET_ACTIVITYがtrueですが、ACTIVITY_TEXTにテキストがありません。アクティビティのセットを中断します。"
+            );
+            return;
+        }
+        client.user
+            .setActivity(activity)
+            .then((presence) => {
+                console.log(`アクティビティをセットしました: ${presence.activities[0].name}`);
+            })
+            .catch(console.error);
+    } else {
+        console.log(
+            "SET_ACTIVITYがtrueではないので、アクティビティをセットしませんでした"
+        );
+    }
 });
 
 // どこかのチャンネルにメッセージが投稿されたら
-client.on("message", message => {
+client.on("message", (message) => {
     // 投稿されたのがテキストチャンネル かつ
     // チャンネル名がスープチャンネル かつ
     // メッセージの末尾が"?"か"？" なら
@@ -20,7 +38,7 @@ client.on("message", message => {
         message.channel.name === process.env.SOUP_CHANNEL_NAME &&
         /\?|？$/.test(message.content)
     ) {
-        console.log(`Question Posted: ${message.content}`);
+        console.log(`質問が投稿されました:  ${message.content}`);
         // 順番にリアクションをつける
         soupReactions.reduce(
             (promise, emoji) => promise.then(() => message.react(emoji)),
@@ -44,7 +62,7 @@ client.on("messageReactionAdd", (messageReaction, user) => {
         soupReactions.includes(messageReaction.emoji.name)
     ) {
         // 自分のリアクションをすべて消す
-        messageReaction.message.reactions.cache.forEach(reaction => {
+        messageReaction.message.reactions.cache.forEach((reaction) => {
             reaction.users.remove(client.user);
         });
     }
