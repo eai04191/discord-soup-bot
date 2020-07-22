@@ -9,13 +9,13 @@
         "start": "nodemon"
     },
     "devDependencies": {
-        "nodemon": "^2.0.2",
-        "ts-node": "^8.5.4",
-        "typescript": "^3.7.4"
+        "nodemon": "^2.0.4",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7"
     },
     "dependencies": {
-        "@types/node": "^12.12.21",
-        "discord.js": "^11.5.1",
+        "@types/node": "^14.0.24",
+        "discord.js": "^12.2.0",
         "dotenv": "^8.2.0"
     }
 }

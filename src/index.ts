@@ -44,8 +44,8 @@ client.on("messageReactionAdd", (messageReaction, user) => {
         soupReactions.includes(messageReaction.emoji.name)
     ) {
         // 自分のリアクションをすべて消す
-        messageReaction.message.reactions.forEach(reaction => {
-            reaction.remove(client.user);
+        messageReaction.message.reactions.cache.forEach(reaction => {
+            reaction.users.remove(client.user);
         });
     }
 });
