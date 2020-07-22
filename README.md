@@ -13,8 +13,8 @@ Soup Chef
 ```bash
 cp .env.sample .env
 # https://discordapp.com/developers/applications/me
-# でアプリケーションを作成して、アプリケーションの中でbotを作成し、botのtokenを
-# .env の DISCORD_TOKEN に入れる
+# でアプリケーションを作成して、アプリケーションの中でbotを作成し、botのTokenを
+# .env の DISCORD_TOKEN に入れる（TokenはClient Secretではありません）
 
 # https://discordapp.com/oauth2/authorize?&client_id=アプリケーションのClient ID&scope=bot
 # を開いてbotをサーバーに招待する
@@ -22,6 +22,14 @@ cp .env.sample .env
 yarn
 yarn start
 ```
+
+Bot監視対象のチャンネルに対して少なくとも
+
+- メッセージを読む
+- メッセージ履歴を読む
+- リアクションの追加
+
+の権限が必要です。
 
 
 ## Licence
