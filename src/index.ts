@@ -36,7 +36,7 @@ client.on("message", (message) => {
     if (
         message.channel instanceof TextChannel &&
         message.channel.name === process.env.SOUP_CHANNEL_NAME &&
-        /\?|？$/.test(message.content)
+        /(\?|？)$/.test(message.content)
     ) {
         console.log(`質問が投稿されました:  ${message.content}`);
         // 順番にリアクションをつける
