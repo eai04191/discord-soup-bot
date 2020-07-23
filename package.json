@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@types/node": "^14.0.24",
+        "dayjs": "^1.8.30",
         "discord.js": "^12.2.0",
         "dotenv": "^8.2.0"
     }
