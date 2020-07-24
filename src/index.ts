@@ -160,7 +160,7 @@ client.on("message", (message) => {
             if (message.content.startsWith(`${prefix} start`)) {
                 const regex = new RegExp(`^${prefix} start (?<title>.+)`);
                 const title = message.content.match(regex)?.groups?.title;
-                if (!!quiz) {
+                if (title) {
                     quiz.title = title;
                     quiz.startedAt = new Date();
                     quiz.isInProgress = true;
