@@ -5,9 +5,7 @@ Soup Chef
 
 </h1>
 
-[![CodeFactor](https://www.codefactor.io/repository/github/eai04191/discord-soup-bot/badge?style=flat-square)](https://www.codefactor.io/repository/github/eai04191/discord-soup-bot)
-
-<!-- [![Invite this Bot](https://img.shields.io/badge/Discord-Invite%20this%20bot-green?logo=discord&style=flat-square)](https://discordapp.com/oauth2/authorize?&client_id=657748609323892757&scope=bot) -->
+[![Invite this Bot](https://img.shields.io/badge/Discord-Invite%20this%20bot-green?logo=discord&style=flat-square)](https://discordapp.com/oauth2/authorize?&client_id=657748609323892757&scope=bot) [![CodeFactor](https://www.codefactor.io/repository/github/eai04191/discord-soup-bot/badge?style=flat-square)](https://www.codefactor.io/repository/github/eai04191/discord-soup-bot)
 
 ![preview gif](https://i.imgur.com/DY010xq.gif)
 
