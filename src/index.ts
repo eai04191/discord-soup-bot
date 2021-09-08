@@ -34,15 +34,10 @@ client.on("ready", () => {
     // アクティビティに関する処理
     (() => {
         if (process.env.SET_ACTIVITY === "true") {
-            const activity = process.env.ACTIVITY_TEXT;
-            if (!activity) {
-                console.error(
-                    "SET_ACTIVITYがtrueですが、ACTIVITY_TEXTにテキストがありません。アクティビティのセットを中断します。"
-                );
-                return;
-            }
             client.user
-                .setActivity(activity)
+                .setActivity("#" + process.env.SOUP_CHANNEL_NAME, {
+                    type: "WATCHING",
+                })
                 .then((presence) => {
                     console.log(
                         `アクティビティをセットしました: ${presence.activities[0].name}`
